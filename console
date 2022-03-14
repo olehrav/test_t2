@@ -1,0 +1,17 @@
+<?php
+
+/*
+| Register The Auto Loader
+*/
+require __DIR__.'/vendor/autoload.php';
+
+require __DIR__.'/config/settings.php';
+
+use Symfony\Component\Console\Application;
+use App\Console\Command\ShoppingCartAddCommand;
+
+$application = new Application('Shopping cart', '1.0.0');
+
+$application->add(new ShoppingCartAddCommand());
+
+$application->run();
